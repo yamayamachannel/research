@@ -8,5 +8,10 @@ client = pymongo.MongoClient('localhost', 27017)
 db = client.naist2021
 dbcol = db.codesaves
 df = pd.DataFrame(list(dbcol.find()))
-#print(df)
-print(df[df.userID == 's44'])
+
+print(
+    
+    #df[df.userID == 's44']
+    df.loc[df.userID == 's44']['output']
+
+)
